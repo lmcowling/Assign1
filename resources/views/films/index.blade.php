@@ -3,7 +3,7 @@
   <h1>All Films</h1>
   @foreach ($films as $film)
     <div>
-      {{ $film->title }}
+      <a href="/films/{{ $film->id }}">{{ $film->title }}</a>
     </div>
   @endforeach
 @stop
