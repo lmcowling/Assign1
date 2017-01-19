@@ -10,4 +10,9 @@ class Films extends Model
     {
       return $this->hasMany(Review::class);
     }
+
+    public function addReview(Review $review)
+    {
+      return $this->review()->save($review);
+    }
 }
