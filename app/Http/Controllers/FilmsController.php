@@ -30,11 +30,4 @@ class FilmsController extends Controller
       $film->update($request->all());
       return view('films.detail', compact('film'));
     }
-
-    public function filmDelete(Films $film)
-    {
-      $film->delete($request->all());
-      $films = Films::all();
-      return view('films.index', compact('films'));
-    }
 }

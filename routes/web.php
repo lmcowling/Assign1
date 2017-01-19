@@ -20,7 +20,7 @@ Route::get('films/{film_id}', 'FilmsController@filmDetail');
 Route::post('films/{film}/reviews', 'ReviewsController@add');
 
 Route::post('films/{film}/filmsEdit', 'FilmsController@films');
-
 Route::patch('films/{film}/edit', 'FilmsController@filmEdit');
 
-Route::patch('films/{film}/delete', 'FilmsController@filmDelete');
+Route::get('reviews/{review_id}', 'ReviewsController@reviewDetail');
+Route::post('reviews/{review}/delete', 'ReviewsController@reviewDelete');

@@ -5,18 +5,10 @@
     <button type="submit">Edit film</button>
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
   </form>
-
-  <form method="POST" action="/films/{{ $film->id }}/delete">
-    {{-- {{ method_field('PATCH')}} --}}
-    {{-- {{ csrf_field() }} --}}
-    <button type="submit">Delete film</button>
-    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-  </form>
-
   <hr>
   <ul>
     @foreach ($film->review as $review)
-      <li>{{ $review->body }}</li>
+      <li><a href="/reviews/{{ $review->id }}">{{ $review->body }}</a></li>
     @endforeach
   </ul>
   <hr>
