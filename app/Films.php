@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Films extends Model
 {
+
+    protected $fillable  = ['title']; // allows only the body to be changed.
+
     public function review()
     {
       return $this->hasMany(Review::class);
@@ -15,4 +18,5 @@ class Films extends Model
     {
       return $this->review()->save($review);
     }
+
 }

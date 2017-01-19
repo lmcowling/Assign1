@@ -18,3 +18,9 @@ Route::get('films', 'FilmsController@filmIndex');
 Route::get('films/{film_id}', 'FilmsController@filmDetail');
 
 Route::post('films/{film}/reviews', 'ReviewsController@add');
+
+Route::post('films/{film}/filmsEdit', 'FilmsController@films');
+
+Route::patch('films/{film}/edit', 'FilmsController@filmEdit');
+
+Route::patch('films/{film}/delete', 'FilmsController@filmDelete');
