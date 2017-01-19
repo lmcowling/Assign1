@@ -6,4 +6,4 @@
       <a href="/films/{{ $film->id }}">{{ $film->title }}</a>
     </div>
   @endforeach
-@stop
+@endsection
