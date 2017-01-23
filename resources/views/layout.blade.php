@@ -27,9 +27,8 @@
       </li>
     </ul>
   </div>
-  @yield('content')
+  @yield('content') {{-- getting the body information from the other pages --}}
 </body>
-@yield('footer')
 <div class="footer">
   <p>u1355914 - Computing Bsc</p>
 </div>
