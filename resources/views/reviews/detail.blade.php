@@ -6,7 +6,7 @@
   <div class="pageBody">
     <h3>{{ $review->body }}</h3>
     @if (Auth::guest())
-      <h4>Login to delte a review</h4>
+      <h4>Login to delete a review</h4>
     @else
     <form method="POST" action="/reviews/{{ $review->id }}/delete">
       <button type="submit">Delete review</button>
