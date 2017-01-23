@@ -3,7 +3,11 @@
   <div class="pageTitle">
     <h1>{{ $film->title }}</h1>
     <form method="POST" action="/films/{{ $film->id }}/filmsEdit"> {{-- form to post the film id to the edit film page --}}
-      <button type="submit">Edit film</button>
+      @if (Auth::guest())
+        <h4>Login to edit a film</h4>
+      @else
+        <button type="submit">Edit film</button>
+      @endif
       <input type="hidden" name="_token" value="{{ csrf_token() }}">
     </form>
   </div>
@@ -17,14 +21,18 @@
       @endforeach
     </ul>
     <h3>Add review</h3>
-    <form method="POST" action="/films/{{ $film->id }}/reviews"> {{-- form to post the film id so the review can be added to the correct table --}}
-      <div>
-        <textarea name="body"></textarea>
-      </div>
-      <div>
-        <button type="submit">Add review</button>
-      </div>
-      <input type="hidden" name="_token" value="{{ csrf_token() }}">
-    </form>
+    @if (Auth::guest())
+      <h4>Login to add a review</h4>
+    @else
+      <form method="POST" action="/films/{{ $film->id }}/reviews"> {{-- form to post the film id so the review can be added to the correct table --}}
+        <div>
+          <textarea name="body"></textarea>
+        </div>
+        <div>
+          <button type="submit">Add review</button>
+        </div>
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+      </form>
+    @endif
   </div>
 @endsection
