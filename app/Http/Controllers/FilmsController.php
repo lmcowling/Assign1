@@ -33,7 +33,7 @@ class FilmsController extends Controller
 
     public function filmSearch(Request $request) // function searches the film table for results matching the input
     {
-      $search = $request->films;
+      $search = $request->title;
       $films = Films::where('title', 'LIKE', "%$search%")->get();
       return view('films.results', compact('films'));
     }

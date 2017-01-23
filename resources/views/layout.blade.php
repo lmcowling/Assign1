@@ -40,11 +40,9 @@
         @endif
         <li>
           <form method="POST" action="/films/search"> {{-- form to search the Films table --}}
-            {{ csrf_field() }}
-            <div>
               <input name="title" type="search">
               <button type="submit">Search</button>
-            </div>
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
           </form>
         </li>
     </ul>
