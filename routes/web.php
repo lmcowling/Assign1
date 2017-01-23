@@ -24,3 +24,8 @@ Route::patch('films/{film}/edit', 'FilmsController@filmEdit');
 
 Route::get('reviews/{review_id}', 'ReviewsController@reviewDetail');
 Route::post('reviews/{review}/delete', 'ReviewsController@reviewDelete');
+
+Auth::routes();
+
+// Route::get('login', 'PagesController@login');
+// Route::get('register', 'PagesController@register');

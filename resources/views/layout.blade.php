@@ -12,7 +12,6 @@
 </head>
 <body>
   <div class="header">
-
   </div>
   <div class="navigation">
     <ul>
@@ -25,6 +24,20 @@
       <li>
         <a href="/about">About</a>
       </li>
+      @if (Auth::guest())
+          <li><a href="{{ url('/login') }}">Login</a></li>
+          <li><a href="{{ url('/register') }}">Register</a></li>
+        @else
+          <li>
+            <a>User: {{ Auth::user()->name }} <span class="caret"></span></a>
+            <li>
+              <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+              <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+              </form>
+            </li>
+          </li>
+        @endif
     </ul>
   </div>
   @yield('content') {{-- getting the body information from the other pages --}}
