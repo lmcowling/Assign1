@@ -24,6 +24,9 @@ Route::post('films/{film}/reviews', 'ReviewsController@add');
 Route::post('films/{film}/filmsEdit', 'FilmsController@films');
 Route::patch('films/{film}/edit', 'FilmsController@filmEdit');
 
+Route::post('films/addFilm', 'FilmsController@addFilm');
+Route::post('films/add', 'FilmsController@filmAdd');
+
 Route::get('reviews/{review_id}', 'ReviewsController@reviewDetail');
 Route::post('reviews/{review}/delete', 'ReviewsController@reviewDelete');
 

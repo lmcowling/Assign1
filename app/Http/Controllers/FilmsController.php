@@ -37,4 +37,15 @@ class FilmsController extends Controller
       $films = Films::where('title', 'LIKE', "%$search%")->get();
       return view('films.results', compact('films'));
     }
+
+    public function addFilm() // function to take the user to the add film page
+    {
+      return view('films.add');
+    }
+
+    public function filmAdd(Request $request) // function to add a new film to the Films table
+    {
+      $film = new Films($request->all());
+      return view('films.detail', compact('film'));
+    }
 }
