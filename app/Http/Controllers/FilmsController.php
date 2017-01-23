@@ -25,9 +25,16 @@ class FilmsController extends Controller
       return view('films.edit', compact('film'));
     }
 
-    public function filmEdit(Request $request, Films $film) // funcrion updates the database with the request parameters
+    public function filmEdit(Request $request, Films $film) // function updates the database with the request parameters
     {
       $film->update($request->all());
       return view('films.detail', compact('film'));
+    }
+
+    public function filmSearch(Request $request) // function searches the film table for results matching the input
+    {
+      $search = $request->films;
+      $films = Films::where('title', 'LIKE', "%$search%")->get();
+      return view('films.results', compact('films'));
     }
 }

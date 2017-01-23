@@ -38,6 +38,15 @@
             </li>
           </li>
         @endif
+        <li>
+          <form method="POST" action="/films/search"> {{-- form to search the Films table --}}
+            {{ csrf_field() }}
+            <div>
+              <input name="title" type="search">
+              <button type="submit">Search</button>
+            </div>
+          </form>
+        </li>
     </ul>
   </div>
   @yield('content') {{-- getting the body information from the other pages --}}

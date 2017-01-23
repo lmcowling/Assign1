@@ -17,6 +17,8 @@ Route::get('about', 'PagesController@about');
 Route::get('films', 'FilmsController@filmIndex');
 Route::get('films/{film_id}', 'FilmsController@filmDetail');
 
+Route::post('films/search', 'FilmsController@filmSearch');
+
 Route::post('films/{film}/reviews', 'ReviewsController@add');
 
 Route::post('films/{film}/filmsEdit', 'FilmsController@films');
