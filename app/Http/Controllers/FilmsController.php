@@ -46,6 +46,7 @@ class FilmsController extends Controller
     public function filmAdd(Request $request) // function to add a new film to the Films table
     {
       $film = new Films($request->all());
+      $film->save();
       return view('films.detail', compact('film'));
     }
 }
